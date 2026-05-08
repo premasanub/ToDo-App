@@ -1,5 +1,5 @@
 // (Clean CRUD + localStorage)
-// JavaScript
+
 
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 let editId = null;

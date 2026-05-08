@@ -21,6 +21,8 @@ Open index.html in browser
 Uses browser localStorage to persist data.
 📱 Responsive
 Works on mobile and desktop.
+## Deployed link:
+https://jade-tiramisu-8dd12d.netlify.app/
 🔮 Future Improvements
 Charts (graph)
 Category filters

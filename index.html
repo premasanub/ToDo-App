@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Income Expense Calculator</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-md p-6 rounded-2xl shadow-lg">
+
+    <!-- Title -->
+    <h1 class="text-2xl font-bold text-center mb-4">
+      Income Expense Tracker
+    </h1>
+
+    <!-- Summary -->
+    <div class="grid grid-cols-3 text-center mb-4">
+      <div>
+        <p class="text-gray-500 text-sm">Income</p>
+        <p class="text-green-600 font-bold">₹<span id="income">0</span></p>
+      </div>
+
+      <div>
+        <p class="text-gray-500 text-sm">Expense</p>
+        <p class="text-red-600 font-bold">₹<span id="expense">0</span></p>
+      </div>
+
+      <div>
+        <p class="text-gray-500 text-sm">Balance</p>
+        <p class="font-bold">₹<span id="balance">0</span></p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="space-y-3">
+
+      <input id="desc" type="text" placeholder="Description"
+        class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+
+      <input id="amount" type="number" placeholder="Amount"
+        class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+
+      <select id="type"
+        class="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <div class="flex gap-2">
+        <button onclick="handleSubmit()"
+          class="bg-green-500 hover:bg-green-600 text-white w-full p-2 rounded-lg">
+          Add / Update
+        </button>
+
+        <button onclick="resetForm()"
+          class="bg-gray-400 hover:bg-gray-500 text-white w-full p-2 rounded-lg">
+          Reset
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Filters -->
+    <div class="flex justify-around mt-4 text-sm">
+      <label><input type="radio" name="filter" value="all" checked onchange="applyFilter()"> All</label>
+      <label><input type="radio" name="filter" value="income" onchange="applyFilter()"> Income</label>
+      <label><input type="radio" name="filter" value="expense" onchange="applyFilter()"> Expense</label>
+    </div>
+
+    <!-- List -->
+    <ul id="list" class="mt-4 space-y-2"></ul>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
